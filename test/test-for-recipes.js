@@ -3,7 +3,7 @@ const chaiHttp = require('chai-http');
 
 const {app, closeServer, runServer} = require('../server'); 
 
-const expect chai.expect; 
+const expect = chai.expect; 
 
 chai.use(chaiHttp); 
 
@@ -69,7 +69,7 @@ describe('Recipes', function () {
 		}) 
 
 		.then(function(res) {
-			expect(res).to.have.status(200); 
+			expect(res).to.have.status(204); 
 			expect(res).to.be.json;
 			expect(res.body).to.be.a('object');
 			expect(res.body).to.deep.equal(updateData); 
